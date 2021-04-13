@@ -1,4 +1,4 @@
-This is an unofficial gentoo overlay repository maintained by me (jjakob).
+This is an unofficial Gentoo overlay repository maintained by me (jjakob).
 
 Packages:
 - mail-mta/dma
