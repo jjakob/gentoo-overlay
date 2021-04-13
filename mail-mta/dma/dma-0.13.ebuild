@@ -70,6 +70,10 @@ src_install() {
 	insopts -m 640 -o root -g mail
 	doins auth.conf
 
+	insinto /etc/cron.d
+	insopts -m 644
+	newins "${FILESDIR}"/dma.cron dma
+
 	doman dma.8
 
 	if use mta; then
