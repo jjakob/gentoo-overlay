@@ -18,3 +18,7 @@ Packages:
 
 - virtual/mta
 	copy of virtual/mta::gentoo with added mail-mta/dma
+
+- net-p2p/monero-gui
+	copy of net-p2p/monero-gui::booboo
+	updated version, fixed issues preventing a successful build
