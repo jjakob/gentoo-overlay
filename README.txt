@@ -22,3 +22,7 @@ Packages:
 - net-p2p/monero-gui
 	copy of net-p2p/monero-gui::booboo
 	updated version, fixed issues preventing a successful build
+
+- net-libs/webkit-gtk
+	copy of ::lanodanOverlay
+	fixed 2.33.1 build issues
