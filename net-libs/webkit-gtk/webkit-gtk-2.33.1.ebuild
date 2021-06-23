@@ -51,7 +51,7 @@ RDEPEND="
 	>=media-libs/harfbuzz-1.4.2:=[icu(+)]
 	>=dev-libs/icu-60.2:=
 	virtual/jpeg:0=
-	>=net-libs/libsoup-2.54:2.4[introspection?]
+	|| ( >=net-libs/libsoup-2.54:2.4[introspection?] net-libs/libsoup:3[introspection?] )
 	>=dev-libs/libxml2-2.8.0:2
 	>=media-libs/libpng-1.4:0=
 	dev-db/sqlite:3=
@@ -172,8 +172,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	eapply "${FILESDIR}"/2.28.2-opengl-without-X-fixes.patch
-	eapply "${FILESDIR}"/${PV}-Properly-use-CompletionHandler-when-USE_OPENGL_OR_ES.patch
+	eapply "${FILESDIR}"/2.33.1-opengl-without-X-fixes.patch
 	cmake_src_prepare
 	gnome2_src_prepare
 }
@@ -242,6 +241,16 @@ src_configure() {
 		opengl_enabled=OFF
 	fi
 
+	# XXX libsoup:3 doesn't exist yet so this is only an assumption
+	local use_soup_2
+	if has_version "net-libs/libsoup:3"; then
+		use_soup_2=OFF
+	elif has_version "net-libs/libsoup:2.4"; then
+		use_soup_2=ON
+	else
+		die "No suitable net-libs/libsoup version found"
+	fi
+
 	local mycmakeargs=(
 		-DENABLE_UNIFIED_BUILDS=$(usex jumbo-build)
 		-DENABLE_WEBDRIVER=OFF
@@ -285,6 +294,7 @@ src_configure() {
 		-DDBUS_PROXY_EXECUTABLE:FILEPATH="${EPREFIX}"/usr/bin/xdg-dbus-proxy
 		-DPORT=GTK
 		${ruby_interpreter}
+		-DUSE_SOUP2=${use_soup_2}
 	)
 
 	# https://bugs.gentoo.org/761238
