@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-		<email>contact@hacktivis.me</email>
-		<name>Haelwenn (lanodan) Monnier</name>
+		<email>jernej.jakob+gentoo@gmail.com</email>
+		<name>Jernej Jakob</name>
 	</maintainer>
 	<use>
 		<flag name="egl">Enable EGL support</flag>
