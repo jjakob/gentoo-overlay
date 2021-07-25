@@ -32,4 +32,5 @@ RDEPEND="
 
 src_install() {
 	dobin cnping
+	doman cnping.1
 }
