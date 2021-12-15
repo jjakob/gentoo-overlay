@@ -177,7 +177,7 @@ else
 	SRC_URI="https://github.com/tulir/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 			${EGO_SUM_SRC_URI}"
 	#S="${WORKDIR}/${P}"
-	#KEYWORDS="~amd64 ~arm64 ~ppc64 ~x86"
+	KEYWORDS="amd64 ~arm64 ~ppc64 ~x86"
 fi
 
 DEPEND="encryption? ( >=dev-libs/olm-3 )"
