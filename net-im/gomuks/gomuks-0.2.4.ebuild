@@ -3,8 +3,6 @@
 
 EAPI=7
 
-inherit golang-build
-
 DESCRIPTION="A terminal based Matrix client written in Go"
 HOMEPAGE="https://github.com/tulir/${PN}"
 LICENSE="AGPL-3"
@@ -17,8 +15,6 @@ if [[ "${PV}" == 9999 ]] ; then
 	EGIT_REPO_URI="https://github.com/tulir/${PN}.git"
 else
 	inherit go-module
-	SRC_URI="https://github.com/tulir/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-	#S="${WORKDIR}/${P}"
 	EGO_SUM=(
 		"github.com/aead/siphash v1.0.1/go.mod "
 		"github.com/alecthomas/assert v0.0.0-20170929043011-405dbfeb8e38 "
@@ -175,6 +171,12 @@ else
 		"maunium.net/go/tcell v0.2.0 "
 		"maunium.net/go/tcell v0.2.0/go.mod "
 	)
+
+	go-module_set_globals
+
+	SRC_URI="https://github.com/tulir/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
+			${EGO_SUM_SRC_URI}"
+	#S="${WORKDIR}/${P}"
 	#KEYWORDS="~amd64 ~arm64 ~ppc64 ~x86"
 fi
 
