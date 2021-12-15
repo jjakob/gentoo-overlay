@@ -12,7 +12,7 @@ EGIT_COMMIT="v${PV}"
 LICENSE="NEWLIB"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="hw-wallet qrcode unwind password-strength-meter"
+IUSE="hw-wallet qrcode unwind"
 
 COMMON_DEPEND="
 	dev-db/lmdb:=
@@ -43,7 +43,6 @@ RDEPEND="${COMMON_DEPEND}
 PATCHES=(
 	"${FILESDIR}/monero-0.17.1.3-linkjobs.patch"
 	"${FILESDIR}/monero-0.17.1.9-no-git.patch"
-	#"${FILESDIR}/monero-0.17.2.0-boost-176.patch"
 	"${FILESDIR}/monero-gui-0.17.2.2-linkjobs.patch"
 	"${FILESDIR}/monero-gui-0.17.2.2-no-git.patch"
 )
@@ -53,15 +52,12 @@ src_configure () {
 		-DBUILD_SHARED_LIBS=OFF
 		-DMANUAL_SUBMODULES=ON
 		-DUSE_DEVICE_TREZOR=$(usex hw-wallet)
-		-DENABLE_PASS_STRENGTH_METER=$(usex password-strength-meter)
 		-DWITH_SCANNER=$(usex qrcode)
 	)
 	cmake_src_configure
 }
 
 src_compile () {
-	emake -C src/zxcvbn-c
-
 	CMAKE_USE_DIR="${WORKDIR}/monero-gui-${PV}"
 	BUILD_DIR="${WORKDIR}/monero-gui-${PV}_build"
 	cmake_src_compile
