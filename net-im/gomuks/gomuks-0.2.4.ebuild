@@ -5,7 +5,7 @@ EAPI=7
 
 DESCRIPTION="A terminal based Matrix client written in Go"
 HOMEPAGE="https://github.com/tulir/${PN}"
-LICENSE="AGPL-3"
+LICENSE="AGPL-3 Apache-2.0 MIT BSD-2 BSD"
 SLOT="0"
 IUSE="+encryption"
 EGO_PN="github.com/tulir/${PN}"
