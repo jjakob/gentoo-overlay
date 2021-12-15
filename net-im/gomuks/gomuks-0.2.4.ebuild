@@ -175,7 +175,7 @@ else
 		"maunium.net/go/tcell v0.2.0 "
 		"maunium.net/go/tcell v0.2.0/go.mod "
 	)
-	KEYWORDS="~amd64 ~arm64 ~ppc64 ~x86"
+	#KEYWORDS="~amd64 ~arm64 ~ppc64 ~x86"
 fi
 
 DEPEND="encryption? ( >=dev-libs/olm-3 )"
