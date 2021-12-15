@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM 'http://www.gentoo.org/dtd/metadata.dtd'>
+<pkgmetadata>
+	<maintainer type="person">
+		<email>jernej.jakob+gentoo@gmail.com</email>
+		<name>Jernej Jakob</name>
+	</maintainer>
+	<longdescription>An implementation of a well known cryptographic ratchet in C++</longdescription>
+	<upstream>
+		<remote-id type="gitlab">https://gitlab.matrix.org/matrix-org/olm</remote-id>
+	</upstream>
+</pkgmetadata>
