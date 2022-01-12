@@ -168,8 +168,10 @@ EGO_SUM=(
 
 go-module_set_globals
 
-SRC_URI="https://github.com/tulir/gomuks/archive/baddce264f1def28de4b6b34d786de74b46fa4da.tar.gz -> ${P}.tar.gz
+EGIT_COMMIT=baddce264f1def28de4b6b34d786de74b46fa4da
+SRC_URI="https://github.com/tulir/gomuks/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz
 		${EGO_SUM_SRC_URI}"
+S=${WORKDIR}/${PN}-${EGIT_COMMIT}
 KEYWORDS="~amd64 ~arm64 ~ppc64 ~x86"
 
 DEPEND="encryption? ( >=dev-libs/olm-3 )"
