@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -190,4 +190,12 @@ src_compile() {
 
 src_install() {
 	dobin ${PN}
+}
+
+pkg_postinst() {
+	has_version -r "x11-misc/xdg-utils" || ewarn "To open media, xdg-open from x11-misc/xdg-utils is required."
+	if ! has_version -r "media-video/ffmpeg" ; then
+		ewarn "To include audio/video file metadata to uploaded files,"
+		ewarn "ffprobe from media-video/ffmpeg is required."
+	fi
 }
