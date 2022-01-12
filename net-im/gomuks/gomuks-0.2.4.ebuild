@@ -4,15 +4,15 @@
 EAPI=7
 
 DESCRIPTION="A terminal based Matrix client written in Go"
-HOMEPAGE="https://github.com/tulir/${PN}"
+HOMEPAGE="https://github.com/tulir/gomuks"
 LICENSE="AGPL-3 Apache-2.0 BSD BSD-2 MIT MPL-2.0"
 SLOT="0"
 IUSE="+encryption"
-EGO_PN="github.com/tulir/${PN}"
+EGO_PN="github.com/tulir/gomuks"
 
 if [[ "${PV}" == 9999 ]] ; then
 	inherit git-r3 golang-vcs
-	EGIT_REPO_URI="https://github.com/tulir/${PN}.git"
+	EGIT_REPO_URI="https://github.com/tulir/gomuks.git"
 else
 	inherit go-module
 	EGO_SUM=(
@@ -174,7 +174,7 @@ else
 
 	go-module_set_globals
 
-	SRC_URI="https://github.com/tulir/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
+	SRC_URI="https://github.com/tulir/gomuks/archive/v${PV}.tar.gz -> ${P}.tar.gz
 			${EGO_SUM_SRC_URI}"
 	#S="${WORKDIR}/${P}"
 	KEYWORDS="amd64 ~arm64 ~ppc64 ~x86"
