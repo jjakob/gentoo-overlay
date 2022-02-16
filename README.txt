@@ -1,5 +1,14 @@
 This is an unofficial Gentoo overlay repository maintained by me (jjakob).
 
+To use:
+- mask all packages in this overlay:
+  echo "*/*::jjakob" > /etc/portage/package.mask/overlay_jjakob
+- eselect repository enable jjakob
+- unmask the packages you need, for example:
+  echo -e "net-im/gomuks::jjakob\ndev-libs/olm::jjakob"\
+      > /etc/portage/package.unmask/overlay_jjakob
+- sync and install packages as usual
+
 Packages:
 - mail-mta/dma
 	"Dragonfly Mail Agent", https://github.com/corecode/dma
