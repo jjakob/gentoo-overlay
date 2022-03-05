@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>jernej.jakob+gentoo@gmail.com</email>
+		<name>Jernej Jakob</name>
+	</maintainer>
+	<use>
+		<flag name="hidapi">Support setting up brand new firmware-less Trezor One</flag>
+		<flag name="qt5">Support PIN widgets PinMatrixWidget, PinButton</flag>
+		<flag name="extra">Support setting the homescreen image</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">trezor/trezor-firmware</remote-id>
+	</upstream>
+</pkgmetadata>
