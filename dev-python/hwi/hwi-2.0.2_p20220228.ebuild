@@ -41,6 +41,17 @@ distutils_enable_sphinx docs \
 
 PATCHES=( "${FILESDIR}/20220228_setup-py.patch" )
 
+pkg_setup() {
+	if ! has_version -r ">=dev-libs/hidapi-0.9.0"; then
+		eerror "Detected old version of dev-libs/hidapi that doesn't work with latest dev-python/hidapi."
+		eerror "https://github.com/bitcoin-core/HWI/issues/462 https://bugs.gentoo.org/696482"
+		eerror "Please use accept_keywords to accept a newer version, preferably it should match the dev-python/hidapi version."
+		die
+	else
+		einfo "Checked version of dev-libs/hidapi is OK."
+	fi
+}
+
 python_prepare_all() {
 	# remove upper bounds on dependencies from setup.py file
 	sed 's/,<[0-9.]\+//' -i setup.py || die
