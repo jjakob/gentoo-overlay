@@ -1,0 +1,18 @@
+--- a/setup.py
++++ b/setup.py
+@@ -4,10 +4,13 @@
+ packages = \
+ ['hwilib',
+  'hwilib.devices',
+- 'hwilib.devices.btchip',
+  'hwilib.devices.ckcc',
++ 'hwilib.devices.jadepy',
++ 'hwilib.devices.ledger_bitcoin',
++ 'hwilib.devices.ledger_bitcoin.btchip',
++ 'hwilib.devices.ledger_bitcoin.exception',
++ 'hwilib.devices.ledger_bitcoin.ledgercomm',
+  'hwilib.devices.trezorlib',
+- 'hwilib.devices.trezorlib.messages',
+  'hwilib.devices.trezorlib.transport']
+ 
+ package_data = \
