@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM 'http://www.gentoo.org/dtd/metadata.dtd'>
+<pkgmetadata>
+	<maintainer type="person">
+		<email>jernej.jakob+gentoo@gmail.com</email>
+		<name>Jernej Jakob</name>
+	</maintainer>
+	<longdescription>Cryptographic library for EAC version 2</longdescription>
+	<upstream>
+		<remote-id type="github">frankmorgner/openpace</remote-id>
+	</upstream>
+	<use>
+		<flag name="go">Add support/bindings for the Go language</flag>
+		<flag name="java">Add support/bindings for the Java language</flag>
+		<flag name="python">Add support/bindings for the Python language</flag>
+		<flag name="ruby">Add support/bindings for the Ruby language</flag>
+	</use>
+</pkgmetadata>
