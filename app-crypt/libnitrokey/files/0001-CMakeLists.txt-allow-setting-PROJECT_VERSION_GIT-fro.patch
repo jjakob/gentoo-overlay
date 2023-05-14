@@ -1,0 +1,29 @@
+From 3d58ea51b9922d529c6402c5cd10849c0b8f6ba3 Mon Sep 17 00:00:00 2001
+From: Jernej Jakob <jernej.jakob@gmail.com>
+Date: Sun, 14 May 2023 23:52:11 +0200
+Subject: [PATCH 1/2] CMakeLists.txt: allow setting PROJECT_VERSION_GIT from
+ CLI
+
+---
+ CMakeLists.txt | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 246923d..b604b8a 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -142,7 +142,10 @@ ENDIF()
+ # 2. If git is not installed, PROJECT_VERSION_GIT_RETURN_CODE
+ #    will contain the string 'No such file or directory'
+ # Hence fallback to PROJECT_VERSION when the return code is NOT 0.
+-IF((NOT ${ADD_GIT_INFO}) OR (NOT ${PROJECT_VERSION_GIT_RETURN_CODE} STREQUAL "0"))
++IF(((NOT ${ADD_GIT_INFO})
++		OR (NOT ${PROJECT_VERSION_GIT_RETURN_CODE} STREQUAL "0")
++		)
++		AND (NOT PROJECT_VERSION_GIT))
+ 	MESSAGE(STATUS "Setting fallback Git library version")
+ 	SET(PROJECT_VERSION_GIT "v${PROJECT_VERSION}")
+ ENDIF()
+-- 
+2.39.3
+

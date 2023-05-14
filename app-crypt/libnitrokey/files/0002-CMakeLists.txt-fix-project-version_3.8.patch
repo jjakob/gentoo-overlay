@@ -1,0 +1,25 @@
+From e4b2b91809c02e724b06777f6452b8105f4ef04b Mon Sep 17 00:00:00 2001
+From: Jernej Jakob <jernej.jakob@gmail.com>
+Date: Sun, 14 May 2023 23:52:49 +0200
+Subject: [PATCH 2/2] CMakeLists.txt: fix project version
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index b604b8a..651ca4b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -21,7 +21,7 @@ IF (UNIX)
+     ENDIF()
+ ENDIF()
+ 
+-project(libnitrokey LANGUAGES C CXX VERSION 3.7.0)
++project(libnitrokey LANGUAGES C CXX VERSION 3.8.0)
+ set(CMAKE_CXX_STANDARD 14)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_CXX_EXTENSIONS OFF)
+-- 
+2.39.3
+
