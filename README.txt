@@ -44,3 +44,35 @@ Packages:
 - net-analyzer/cnping
 - www-client/vimb
 - www-misc/wyebadblock
+
+- app-crypt/pynitrokey
+	https://github.com/Nitrokey/pynitrokey
+	To install:
+	  - enable overlays "guru", "homeassistantrepository" (mask them as
+	    described above "mask all packages")
+	  - cat >> /etc/portage/package.accept_keywords/pynitrokey <<-"EOF"
+		app-crypt/pynitrokey::jjakob
+		app-crypt/libnitrokey::jjakob
+		dev-python/libusb1::jjakob
+		dev-python/python-fire::guru
+		dev-python/nkdfu::jjakob
+		dev-python/spsdk::jjakob
+		dev-python/bincopy::jjakob
+		dev-python/humanfriendly::gentoo
+		dev-python/argparse-addons::jjakob
+		dev-python/hexdump::jjakob
+		dev-libs/libusbsio::jjakob
+		dev-python/pylink-square::jjakob
+		dev-python/sly-python::jjakob
+		dev-python/tlv8::jjakob
+		dev-python/click-option-group::guru
+		dev-python/click-command-tree::guru
+		dev-python/pyocd::jjakob
+		dev-python/cmsis-pack-manager::jjakob
+		
+		# for docs
+		dev-python/sphinx-click::guru
+		EOF
+	  - if you have masked overlays, unmask all the above packages plus:
+	  	dev-python/importlib_resources::homeassistantrepository
+	  - emerge -a app-crypt/pynitrokey
