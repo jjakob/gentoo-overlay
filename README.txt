@@ -48,7 +48,7 @@ Packages:
 - app-crypt/pynitrokey
 	https://github.com/Nitrokey/pynitrokey
 	To install:
-	  - enable overlays "guru", "homeassistantrepository" (mask them as
+	  - enable overlays "guru", "HomeAssistantRepository" (mask them as
 	    described above "mask all packages")
 	  - cat >> /etc/portage/package.accept_keywords/pynitrokey <<-"EOF"
 		app-crypt/pynitrokey::jjakob
@@ -69,10 +69,12 @@ Packages:
 		dev-python/click-command-tree::guru
 		dev-python/pyocd::jjakob
 		dev-python/cmsis-pack-manager::jjakob
-		
+		dev-python/oscrypto::guru
+		dev-libs/hidapi::gentoo
+
 		# for docs
 		dev-python/sphinx-click::guru
 		EOF
 	  - if you have masked overlays, unmask all the above packages plus:
-	  	dev-python/importlib_resources::homeassistantrepository
+		dev-python/importlib_resources::HomeAssistantRepository
 	  - emerge -a app-crypt/pynitrokey
