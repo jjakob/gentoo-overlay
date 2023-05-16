@@ -155,7 +155,7 @@ CRATES="
 
 #DISTUTILS_EXT=1
 DISTUTILS_USE_PEP517=maturin
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..11} pypy3 )
 inherit cargo distutils-r1
 
 DESCRIPTION="Python manager for CMSIS-Pack index and cache with fast Rust backend"
