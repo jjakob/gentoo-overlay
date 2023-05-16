@@ -22,7 +22,6 @@ RDEPEND="
 	>=dev-python/cmsis-pack-manager-0.5.2[$PYTHON_USEDEP]
 	=dev-python/cmsis-pack-manager-0*[$PYTHON_USEDEP]
 	=dev-python/colorama-0*[$PYTHON_USEDEP]
-	>=dev-python/importlib-metadata-3.6[$PYTHON_USEDEP]
 	=dev-python/intelhex-2*[$PYTHON_USEDEP]
 	>=dev-python/intervaltree-3.0.2[$PYTHON_USEDEP]
 	=dev-python/intervaltree-3*[$PYTHON_USEDEP]
