@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} pypy3 )
+PYTHON_COMPAT=( python3_{10..11} pypy3 )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1
 
@@ -23,7 +23,6 @@ RDEPEND="
 	=dev-python/cmsis-pack-manager-0*[$PYTHON_USEDEP]
 	=dev-python/colorama-0*[$PYTHON_USEDEP]
 	>=dev-python/importlib-metadata-3.6[$PYTHON_USEDEP]
-	dev-python/importlib_resources[$PYTHON_USEDEP]
 	=dev-python/intelhex-2*[$PYTHON_USEDEP]
 	>=dev-python/intervaltree-3.0.2[$PYTHON_USEDEP]
 	=dev-python/intervaltree-3*[$PYTHON_USEDEP]
@@ -42,7 +41,7 @@ RDEPEND="
 	=dev-python/typing-extensions-4*[$PYTHON_USEDEP]
 	"
 BDEPEND="
-	doc? ( app-doc/doxygen )
+	doc? ( app-doc/doxygen[dot] )
 "
 
 PATCHES="${FILESDIR}"
@@ -64,4 +63,3 @@ python_install_all(){
 
 	distutils-r1_python_install_all
 }
-
