@@ -48,8 +48,7 @@ Packages:
 - app-crypt/pynitrokey
 	https://github.com/Nitrokey/pynitrokey
 	To install:
-	  - enable overlays "guru", "HomeAssistantRepository" (mask them as
-	    described above "mask all packages")
+	  - enable overlay "guru" (mask it as described above)
 	  - cat >> /etc/portage/package.accept_keywords/pynitrokey <<-"EOF"
 		app-crypt/pynitrokey::jjakob
 		app-crypt/libnitrokey::jjakob
@@ -72,9 +71,8 @@ Packages:
 		dev-python/oscrypto::guru
 		dev-libs/hidapi::gentoo
 
-		# for docs
+		# for USE=doc, optional
 		dev-python/sphinx-click::guru
 		EOF
-	  - if you have masked overlays, unmask all the above packages plus:
-		dev-python/importlib_resources::HomeAssistantRepository
+	  - if you have masked overlays, unmask all the above packages
 	  - emerge -a app-crypt/pynitrokey
