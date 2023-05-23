@@ -1,9 +1,33 @@
 This is an unofficial Gentoo overlay repository maintained by me (jjakob).
 
+I prefer if you add this upstream directly to repos.conf instead of using
+'eselect repository'. This way portage can gpg verify commit signatures while
+syncing. The mirrors that Gentoo creates do not have gpg signed commits.
+
 To use:
 - mask all packages in this overlay:
-  echo "*/*::jjakob" > /etc/portage/package.mask/overlay_jjakob
-- eselect repository enable jjakob
+  echo printf '%s' "*/*::jjakob" > /etc/portage/package.mask/repo_jjakob
+- add my gpg public key to root's gpg trust store (This will download my key
+  and mark it as fully trusted in root's trust store. If you wish to contact
+  me to arrange key signing please do!):
+  - as user:
+    - gpg --recv-keys 32238A107C6830B72F45042DEAF0634961C07989
+    - gpg --output jjakob.gpg --export 32238A107C6830B72F45042DEAF0634961C07989
+  - as root:
+    - gpg --import jjakob.gpg
+    - gpg --edit-key 32238A107C6830B72F45042DEAF0634961C07989 <<-"EOF"
+	trust
+	3
+	q
+	EOF
+- cat > /etc/portage/repos.conf/jjakob <<- "EOF"
+	[jjakob]
+	location = /var/db/repos/jjakob
+	sync-type = git
+	sync-uri = https://github.com/jjakob/gentoo-overlay.git
+	# comment this if portage can't verify signatures
+	sync-git-verify-commit-signature = true
+	EOF
 - unmask the packages you need, for example:
   printf '%s\n' "net-im/gomuks::jjakob" >
   	/etc/portage/package.unmask/overlay_jjakob
