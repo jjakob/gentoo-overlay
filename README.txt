@@ -29,8 +29,8 @@ To use:
 	sync-git-verify-commit-signature = true
 	EOF
 - unmask the packages you need, for example:
-  printf '%s\n' "net-im/gomuks::jjakob" >
-  	/etc/portage/package.unmask/overlay_jjakob
+  printf '%s\n' "net-im/gomuks::jjakob" >>
+	/etc/portage/package.unmask/repo_jjakob
 - sync and install packages as usual
 
 Packages:
@@ -50,11 +50,12 @@ Packages:
 	Other versions point to official releases.
 
 	To install:
-	  - echo "virtual/mta::gentoo" > /etc/portage/package.mask/mta
-	  - echo "=mail-mta/dma-9999 **" >
+	  - printf '%s' "virtual/mta::gentoo" > /etc/portage/package.mask/mta
+	  - unmask mail-mta/dma::jjakob
+	  - printf '%s' "=mail-mta/dma-9999 **" >
 	    /etc/portage/package.accept_keywords/dma
 	      or, to use the official releases:
-	    echo "mail-mta/dma ~amd64" >
+	    printf '%s' "mail-mta/dma" >
 	    /etc/portage/package.accept_keywords/dma
 	  - emerge -a mail-mta/dma
 
