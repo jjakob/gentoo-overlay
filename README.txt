@@ -8,7 +8,7 @@ To use:
 - mask all packages in this overlay:
   echo printf '%s' "*/*::jjakob" > /etc/portage/package.mask/repo_jjakob
 - add my gpg public key to root's gpg trust store (This will download my key
-  and mark it as fully trusted in root's trust store. If you wish to contact
+  and mark it as ultimately trusted in root's trust store. If you wish to contact
   me to arrange key signing please do!):
   - as user:
     - gpg --recv-keys 32238A107C6830B72F45042DEAF0634961C07989
@@ -17,7 +17,7 @@ To use:
     - gpg --import jjakob.gpg
     - gpg --edit-key 32238A107C6830B72F45042DEAF0634961C07989 <<-"EOF"
 	trust
-	3
+	5
 	q
 	EOF
 - cat > /etc/portage/repos.conf/jjakob <<- "EOF"
