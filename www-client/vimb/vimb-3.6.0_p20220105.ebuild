@@ -8,9 +8,9 @@ inherit savedconfig
 DESCRIPTION='a fast, lightweight, vim-like browser based on webkit'
 HOMEPAGE='http://fanglingsu.github.io/vimb/'
 
-EGIT_COMMIT="abff254e142317e610fb91d7fed4c76d56f952c8"
-SRC_URI="https://github.com/fanglingsu/vimb/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
-S=${WORKDIR}/${PN}-${EGIT_COMMIT}
+MY_COMMIT="abff254e142317e610fb91d7fed4c76d56f952c8"
+SRC_URI="https://github.com/fanglingsu/vimb/archive/${MY_COMMIT}.tar.gz -> ${P}.tar.gz"
+S=${WORKDIR}/${PN}-${MY_COMMIT}
 
 LICENSE='GPL-3'
 SLOT='3'
