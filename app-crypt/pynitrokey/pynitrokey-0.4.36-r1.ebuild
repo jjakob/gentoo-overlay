@@ -10,7 +10,6 @@ inherit distutils-r1
 DESCRIPTION="A command line interface for the Nitrokey FIDO2, Start, 3 and NetHSM"
 HOMEPAGE="https://github.com/Nitrokey/pynitrokey"
 
-libnitrokey_commit=b34a473ae3b63adb229760d216a7d8ae7a40cbe9
 SRC_URI="https://github.com/Nitrokey/${PN}/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="|| ( Apache-2.0 MIT )"
