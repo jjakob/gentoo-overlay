@@ -14,7 +14,7 @@ S=${WORKDIR}/${PN}-${EGIT_COMMIT}
 
 LICENSE='GPL-3'
 SLOT='3'
-KEYWORDS='~amd64 ~x86'
+KEYWORDS='~amd64'
 IUSE='savedconfig'
 
 RDEPEND='
