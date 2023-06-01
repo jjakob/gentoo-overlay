@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{10..11} pypy3 )
+PYTHON_COMPAT=( python3_{10..11}  )
 inherit distutils-r1
 
 DESCRIPTION="Mangling of various binary files (Motorola S-Record, Intel HEX and bin)"
