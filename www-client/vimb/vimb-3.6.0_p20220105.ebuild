@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit savedconfig toolchain-funcs
+inherit savedconfig
 
 DESCRIPTION='a fast, lightweight, vim-like browser based on webkit'
 HOMEPAGE='http://fanglingsu.github.io/vimb/'
