@@ -13,7 +13,7 @@ S="${WORKDIR}"
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~x86"
+KEYWORDS="~amd64"
 
 BDEPEND="app-arch/unzip"
 
