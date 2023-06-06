@@ -1,22 +1,18 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-DESCRIPTION="Dragonfly Mail Agent"
-HOMEPAGE="https://github.com/corecode/dma"
+DESCRIPTION="Dragonfly Mail Agent (jjakob fork with REWRITEFROM patch)"
+HOMEPAGE="https://github.com/jjakob/dma"
 LICENSE="BSD"
 SLOT="0"
+KEYWORDS="~amd64"
 IUSE="+mta"
 
-if [[ ${PV} == "9999" ]]; then
-	EGIT_REPO_URI="https://github.com/jjakob/${PN}.git"
-	EGIT_BRANCH="rewriteheaderfrom"
-	inherit git-r3
-else
-	SRC_URI="https://github.com/corecode/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64"
-fi
+MY_COMMIT="7db329c93a7c17805231deca9fca9a52be245bf1"
+SRC_URI="https://github.com/jjakob/dma/archive/${MY_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
+S="${WORKDIR}/${PN}-${MY_COMMIT}"
 
 # build programs
 BDEPEND="
@@ -38,18 +34,15 @@ RDEPEND="
 		!mail-mta/courier
 		!mail-mta/esmtp
 		!mail-mta/exim
-		!mail-mta/mini-qmail
 		!mail-mta/netqmail
+		!mail-mta/notqmail
 		!mail-mta/nullmailer
 		!mail-mta/postfix
-		!mail-mta/qmail-ldap
 		!mail-mta/sendmail
-		!mail-mta/opensmtpd
-		!<mail-mta/ssmtp-2.64-r2
-		!>=mail-mta/ssmtp-2.64-r2[mta]
+		!mail-mta/opensmtpd[mta]
+		!mail-mta/ssmtp[mta]
 		!mail-mta/msmtp[mta]
 	)
-
 "
 
 src_install() {
