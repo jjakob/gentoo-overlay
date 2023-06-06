@@ -1,0 +1,68 @@
+From f76e8e63b9400eaa783e6961704e66dbd85f4913 Mon Sep 17 00:00:00 2001
+From: Jernej Jakob <jernej.jakob@gmail.com>
+Date: Tue, 6 Jun 2023 21:07:53 +0200
+Subject: [PATCH] Replace cbor with cbor2 (UNTESTED)
+
+---
+ hwilib/devices/jadepy/jade.py | 6 +++---
+ pyproject.toml                | 2 +-
+ setup.py                      | 2 +-
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/hwilib/devices/jadepy/jade.py b/hwilib/devices/jadepy/jade.py
+index c7955c1..15355d0 100644
+--- a/hwilib/devices/jadepy/jade.py
++++ b/hwilib/devices/jadepy/jade.py
+@@ -1,4 +1,4 @@
+-import cbor
++import cbor2
+ import hashlib
+ import json
+ import time
+@@ -1614,7 +1614,7 @@ class JadeInterface:
+         bytes
+             The request formatted as cbor message bytes
+         """
+-        dump = cbor.dumps(request)
++        dump = cbor2.dumps(request)
+         len_dump = len(dump)
+         if 'method' in request and 'ota_data' in request['method']:
+             msg = 'Sending ota_data message {} as cbor of size {}'.format(request['id'], len_dump)
+@@ -1685,7 +1685,7 @@ class JadeInterface:
+         while True:
+             # 'self' is sufficiently 'file-like' to act as a load source.
+             # Throws EOFError on end of stream/timeout/lost-connection etc.
+-            message = cbor.load(self)
++            message = cbor2.load(self)
+ 
+             if isinstance(message, collections.abc.Mapping):
+                 # A message response (to a prior request)
+diff --git a/pyproject.toml b/pyproject.toml
+index 3151013..f0ae65c 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -25,7 +25,7 @@ typing-extensions = "^4.4"
+ libusb1 = ">=1.7,<3"
+ pyside2 = { version = "^5.14.0", optional = true, python = "<3.10" }
+ bitbox02 = ">=6.1.0,<7.0.0"
+-cbor = "^1.0.0"
++cbor2 = "*"
+ pyserial = "^3.5"
+ dataclasses = {version = "^0.8", python = ">=3.6,<3.7"}
+ 
+diff --git a/setup.py b/setup.py
+index 8b4ad28..9888f88 100644
+--- a/setup.py
++++ b/setup.py
+@@ -22,7 +22,7 @@ modules = \
+ ['hwi', 'hwi-qt']
+ install_requires = \
+ ['bitbox02>=6.1.0,<7.0.0',
+- 'cbor>=1.0.0,<2.0.0',
++ 'cbor2',
+  'ecdsa>=0,<1',
+  'hidapi>=0,<1',
+  'libusb1>=1.7,<3',
+-- 
+2.39.3
+
