@@ -149,7 +149,7 @@ EGIT_COMMIT="2751b186fa05a4c6130beeb6537c44a7f2abd91a"
 SRC_URI="https://github.com/tulir/gomuks/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz
 		${EGO_SUM_SRC_URI}"
 S=${WORKDIR}/${PN}-${EGIT_COMMIT}
-KEYWORDS="~amd64 ~arm64 ~ppc64 ~x86"
+KEYWORDS="~amd64"
 
 DEPEND="encryption? ( >=dev-libs/olm-3 )"
 RDEPEND="${DEPEND}"
