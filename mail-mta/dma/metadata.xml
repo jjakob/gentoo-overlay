@@ -9,6 +9,6 @@
 		<flag name="mta">Enable this to install as system-wide MTA</flag>
 	</use>
 	<upstream>
-		<remote-id type="github">corecode/dma</remote-id>
+		<remote-id type="github">jjakob/dma</remote-id>
 	</upstream>
 </pkgmetadata>
