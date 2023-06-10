@@ -5,25 +5,25 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{10..12} )
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_REQ_USE="sqlite"
 inherit distutils-r1
 
 DESCRIPTION="Tool for searching quassel logs from the commandline"
-HOMEPAGE="https://github.com/fish-face/quasselgrep"
+HOMEPAGE="https://github.com/jjakob/quasselgrep"
 
-MY_COMMIT="af23f353a21e0d58b4010d6bec89e51579a9b9b6"
+MY_COMMIT="2e8aa301e3716578b7670ce305a84333dcf37e58"
 SRC_URI="https://github.com/jjakob/quasselgrep/archive/${MY_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
 S="${WORKDIR}/${PN}-${MY_COMMIT}"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="postgres"
+IUSE="+postgres +sqlite"
 
 RDEPEND="
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	postgres? ( dev-python/psycopg:2[${PYTHON_USEDEP}] )
+	sqlite? ( $(python_gen_impl_dep sqlite) )
 "
 
 RESTRICT="test"
