@@ -4,6 +4,7 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_REQ_USE="sqlite?"
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1
 
@@ -23,7 +24,6 @@ RDEPEND="
 	dev-python/pycryptodome[${PYTHON_USEDEP}]
 	dev-python/python-dateutil[${PYTHON_USEDEP}]
 	postgres? ( dev-python/psycopg:2[${PYTHON_USEDEP}] )
-	sqlite? ( $(python_gen_impl_dep sqlite) )
 "
 
 RESTRICT="test"
