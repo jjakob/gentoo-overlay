@@ -50,7 +50,7 @@ RDEPEND="
 	=dev-libs/libusbsio-2.1*[python,$PYTHON_USEDEP]
 	<dev-python/oscrypto-1.4[$PYTHON_USEDEP]
 	>=dev-python/pycryptodome-3.9.3[$PYTHON_USEDEP]
-	<dev-python/pycryptodome-3.18[$PYTHON_USEDEP]
+	=dev-python/pycryptodome-3*[$PYTHON_USEDEP]
 	>=dev-python/pylink-square-0.8.2[$PYTHON_USEDEP]
 	=dev-python/pyocd-0.35*[$PYTHON_USEDEP]
 	>=dev-python/pyserial-3.1[$PYTHON_USEDEP]
