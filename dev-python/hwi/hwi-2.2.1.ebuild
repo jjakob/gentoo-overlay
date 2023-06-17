@@ -69,7 +69,8 @@ python_prepare_all() {
 
 	pushd test 2>/dev/null || die
 	# remove tests that require hardware emulation
-	rm test_coldcard.py test_device.py test_digitalbitbox.py test_jade.py test_keepkey.py test_ledger.py test_trezor.py || die
+	rm test_coldcard.py test_device.py test_digitalbitbox.py \
+		test_jade.py test_keepkey.py test_ledger.py test_trezor.py || die
 	# remove udev tests because it expects the rules are installed in the libs folder
 	rm test_udevrules.py || die
 	popd || die
