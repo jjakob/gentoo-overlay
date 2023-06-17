@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1
 
@@ -37,6 +37,7 @@ python_install_all(){
 }
 
 pkg_postinst(){
-	ewarn "This package requires the proprietary SEGGER J-Link library to be installed!"
+	ewarn "This package requires the proprietary SEGGER J-Link library to work!"
+	ewarn "It's not required if you don't need to use the J-Link probe."
 	ewarn "Please read /usr/share/doc/${P}/README.md.bz2"
 }
