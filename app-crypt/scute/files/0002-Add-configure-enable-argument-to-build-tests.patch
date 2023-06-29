@@ -1,0 +1,66 @@
+From 69fd93c23d787d2965f47dc1d88e55753cfedb14 Mon Sep 17 00:00:00 2001
+From: Jernej Jakob <jernej.jakob@gmail.com>
+Date: Thu, 29 Jun 2023 15:50:37 +0200
+Subject: [PATCH scute] Add configure enable argument to build tests
+
+* configure.ac:
+  - remove always-true RUN_TESTS
+  - add enable argument 'tests' (default = yes)
+  - set conditional BUILD_TESTS
+* Makefile.am:
+  - rename RUN_TESTS to BUILD_TESTS
+
+Signed-off-by: Jernej Jakob <jernej.jakob@gmail.com>
+---
+ Makefile.am  |  2 +-
+ configure.ac | 14 ++++++++------
+ 2 files changed, 9 insertions(+), 7 deletions(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index a20f1bc..58a6641 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -26,7 +26,7 @@ AUTOMAKE_OPTIONS = dist-bzip2 no-dist-gzip
+ 
+ EXTRA_DIST = autogen.sh README.GIT VERSION
+ 
+-if RUN_TESTS
++if BUILD_TESTS
+ tests = tests
+ else
+ tests =
+diff --git a/configure.ac b/configure.ac
+index c3d58cf..a4754c5 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -202,7 +202,14 @@ AC_ARG_ENABLE([doc], AS_HELP_STRING([--disable-doc],
+                      build_doc=$enableval, build_doc=yes)
+ AM_CONDITIONAL([BUILD_DOC], [test "x$build_doc" != xno && test "x$have_doc_tools" = xyes])
+ 
+-
++#
++# Option to build tests
++#
++build_tests=yes
++AC_ARG_ENABLE([tests], AS_HELP_STRING([--disable-tests],
++                                    [do not build tests]),
++                     build_tests=$enableval, build_tests=yes)
++AM_CONDITIONAL([BUILD_TESTS], [test "x$build_tests" = xyes ])
+ 
+ AC_SUBST(LIBSCUTE_LT_CURRENT)
+ AC_SUBST(LIBSCUTE_LT_AGE)
+@@ -298,11 +305,6 @@ AC_C_INLINE
+ # Checks for library functions.
+ AC_CHECK_FUNCS([ttyname localtime_r timegm stpcpy])
+ 
+-# Test if tests can be run
+-ok=yes
+-AM_CONDITIONAL(RUN_TESTS, test "$ok" = "yes")
+-
+-
+ AH_BOTTOM([
+ /* Prefix all estream functions.  */
+ #define _ESTREAM_EXT_SYM_PREFIX _scute_
+-- 
+2.39.3
+
