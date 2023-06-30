@@ -42,7 +42,7 @@ RDEPEND="
 	<dev-python/cryptography-40.1[$PYTHON_USEDEP]
 	<dev-python/deepmerge-1.2[$PYTHON_USEDEP]
 	>=dev-python/fastjsonschema-2.15.1[$PYTHON_USEDEP]
-	<dev-python/fastjsonschema-2.17[$PYTHON_USEDEP]
+	=dev-python/fastjsonschema-2*[$PYTHON_USEDEP]
 	<dev-python/hexdump-3.4[$PYTHON_USEDEP]
 	>=dev-python/jinja-3.0[$PYTHON_USEDEP]
 	<dev-python/jinja-3.2[$PYTHON_USEDEP]
@@ -57,7 +57,7 @@ RDEPEND="
 	<dev-python/pyserial-3.6[$PYTHON_USEDEP]
 	=dev-python/ruamel-yaml-0.17*[$PYTHON_USEDEP]
 	dev-python/sly-python[$PYTHON_USEDEP]
-	<dev-python/typing-extensions-4.6[$PYTHON_USEDEP]
+	=dev-python/typing-extensions-4*[$PYTHON_USEDEP]
 "
 BDEPEND="
 	test? (
