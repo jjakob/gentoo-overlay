@@ -5,7 +5,6 @@
 		<email>jernej.jakob+gentoo@gmail.com</email>
 		<name>Jernej Jakob</name>
 	</maintainer>
-	<longdescription>Cryptographic library for EAC version 2</longdescription>
 	<upstream>
 		<remote-id type="github">frankmorgner/openpace</remote-id>
 	</upstream>
