@@ -8,10 +8,10 @@ inherit udev cmake
 DESCRIPTION="Support library for the Nitrokey"
 HOMEPAGE="https://github.com/Nitrokey/libnitrokey"
 
-MY_COMMIT=b34a473ae3b63adb229760d216a7d8ae7a40cbe9
+MY_COMMIT="b34a473ae3b63adb229760d216a7d8ae7a40cbe9"
 # pv_git must be as returned by 'git describe': v3.8-10-ge4b2b91
 # is checked in unittest/test_offline.c
-pv_git="v3.8-10-ge4b2b91"
+pv_git="v3.8-8-gb34a473"
 SRC_URI="https://github.com/Nitrokey/${PN}/archive/${MY_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
 S="${WORKDIR}/${PN}-${MY_COMMIT}"
 KEYWORDS="~amd64"
