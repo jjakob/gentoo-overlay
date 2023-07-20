@@ -42,11 +42,16 @@ distutils_enable_tests pytest
 python_prepare_all() {
 	cat >> pytest.ini <<-EOF
 		[pytest]
-		addopts = -rfE --strict-markers --ignore=tests/test_stellar.py --ignore=tests/test_firmware.py
+		addopts = -rfE --strict-markers
 		testpaths = tests
 		xfail_strict = true
 		junit_family = xunit2
 	EOF
+
+	sed -i -e \
+		"/def test_/i@pytest.mark.xfail(reason='Requires internet access to download firmware from https://data.trezor.io')" \
+		tests/test_firmware.py || die
+
 	distutils-r1_python_prepare_all
 }
 
