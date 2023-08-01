@@ -1,0 +1,27 @@
+From e3e24f3aad4cb6d71b9e66012f40cb437e1a480a Mon Sep 17 00:00:00 2001
+From: Jernej Jakob <jernej.jakob@gmail.com>
+Date: Wed, 2 Aug 2023 01:10:29 +0200
+Subject: [PATCH] Fix fx2tool --bootloader
+
+Without this fix, 'fx2load --bootloader' will die with the error message
+"read of closed file".
+---
+ software/fx2/fx2tool.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/software/fx2/fx2tool.py b/software/fx2/fx2tool.py
+index 22f94d9..8f09d98 100644
+--- a/software/fx2/fx2tool.py
++++ b/software/fx2/fx2tool.py
+@@ -349,7 +349,7 @@ def main():
+         if device is not None:
+             if args.bootloader:
+                 bootloader_ihex = os.path.join(resource_dir, "boot-cypress.ihex")
+-                device.load_ram(input_data(open(bootloader_ihex)))
++                device.load_ram(input_data(open(bootloader_ihex, "rb")))
+             elif args.stage2:
+                 device.load_ram(input_data(args.stage2))
+ 
+-- 
+2.41.0
+
