@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>APN-Pucky@users.noreply.github.com</email>
+		<name>APN-Pucky</name>
+	</maintainer>
+	<longdescription lang="en">
+	This repository holds the stubs of the PyQt5 framework. The stub files released within the PyQt5 packages have been modified to allow using them for type-checking via mypy.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">python-qt-tools/PyQt5-stubs</remote-id>
+		<remote-id type="pypi">PyQt5-stubs</remote-id>
+	</upstream>
+</pkgmetadata>
+

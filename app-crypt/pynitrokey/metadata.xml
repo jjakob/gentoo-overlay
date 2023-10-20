@@ -5,7 +5,11 @@
 		<email>jernej.jakob+gentoo@gmail.com</email>
 		<name>Jernej Jakob</name>
 	</maintainer>
+	<longdescription lang="en">
+    	A command line interface for the Nitrokey FIDO2, Nitrokey Start, Nitrokey 3 and NetHSM.
+	</longdescription>
 	<upstream>
 		<remote-id type="github">Nitrokey/pynitrokey</remote-id>
+		<remote-id type="pypi">pynitrokey</remote-id>
 	</upstream>
 </pkgmetadata>
