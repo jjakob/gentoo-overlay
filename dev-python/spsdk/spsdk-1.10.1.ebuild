@@ -28,7 +28,7 @@ RDEPEND="
 	>=dev-python/bincopy-17.14.5[$PYTHON_USEDEP]
 	=dev-python/bincopy-17.14*[$PYTHON_USEDEP]
 	>=dev-python/bitstring-3.1[$PYTHON_USEDEP]
-	<dev-python/bitstring-4.1[$PYTHON_USEDEP]
+	<dev-python/bitstring-5[$PYTHON_USEDEP]
 	>=dev-python/click-7.1[$PYTHON_USEDEP]
 	<dev-python/click-8.2[$PYTHON_USEDEP]
 	>=dev-python/click-option-group-0.3.0[$PYTHON_USEDEP]
