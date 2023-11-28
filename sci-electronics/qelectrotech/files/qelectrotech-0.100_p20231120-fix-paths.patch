@@ -1,0 +1,36 @@
+--- a/qelectrotech.pro   2023-11-28 21:14:44.308210820 +0100
++++ b/qelectrotech.pro   2023-11-28 21:17:40.856547833 +0100
+@@ -5,19 +5,19 @@
+ # Chemins utilises pour la compilation et l'installation de QET
+ unix {
+         # Chemins UNIX
+-        COMPIL_PREFIX              = '/usr/local/'
+-        INSTALL_PREFIX             = '/usr/local/'
++        COMPIL_PREFIX              = '/usr/'
++        INSTALL_PREFIX             = '/usr/'
+         QET_BINARY_PATH            = 'bin/'
+         QET_COMMON_COLLECTION_PATH = 'share/qelectrotech/elements/'
+         QET_COMMON_TBT_PATH        = 'share/qelectrotech/titleblocks/'
+         QET_LANG_PATH              = 'share/qelectrotech/lang/'
+         QET_EXAMPLES_PATH          = 'share/qelectrotech/examples/'
+         QET_LICENSE_PATH           = 'doc/qelectrotech/'
+-        QET_MIME_PACKAGE_PATH      = '../share/mime/packages/'
++        QET_MIME_PACKAGE_PATH      = 'share/mime/packages/'
+         QET_DESKTOP_PATH           = 'share/applications/'
+         QET_ICONS_PATH             = 'share/icons/hicolor/'
+-        QET_MAN_PATH               = 'man/'
+-        QET_APPDATA_PATH           = 'share/appdata'
++        QET_MAN_PATH               = 'share/man/'
++        QET_APPDATA_PATH           = 'share/metainfo'
+ }
+ win32 {
+         # Chemins Windows
+@@ -298,7 +298,7 @@
+ man.extra          = sh man/compress_man_pages.sh
+
+ # L'installation comprend la copie du binaire, des elements, des fichiers de langue et du fichier LICENSE
+-INSTALLS += target elements tbt lang copyright
++INSTALLS += target elements tbt lang
+ # Sous Unix, on installe egalement l'icone, un fichier .desktop, des fichiers mime et les pages de manuel
+ unix {
+         INSTALLS += desktop mime_package icons man examples appdata
