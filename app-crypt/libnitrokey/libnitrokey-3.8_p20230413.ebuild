@@ -28,7 +28,7 @@ DEPEND="
 	test? ( <dev-cpp/catch-3:0 )"
 BDEPEND="
 	virtual/pkgconfig
-	doc? ( app-doc/doxygen )
+	doc? ( app-text/doxygen )
 "
 
 PATCHES=(

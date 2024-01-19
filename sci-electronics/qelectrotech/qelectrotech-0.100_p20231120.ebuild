@@ -33,7 +33,7 @@ IUSE="doc"
 
 BDEPEND="
 	virtual/pkgconfig
-	doc? ( app-doc/doxygen )
+	doc? ( app-text/doxygen )
 "
 RDEPEND="
 	dev-qt/qtconcurrent:5

@@ -40,7 +40,7 @@ RDEPEND="
 	=dev-python/typing-extensions-4*[$PYTHON_USEDEP]
 	"
 BDEPEND="
-	doc? ( app-doc/doxygen[dot] )
+	doc? ( app-text/doxygen[dot] )
 "
 
 PATCHES="${FILESDIR}"
