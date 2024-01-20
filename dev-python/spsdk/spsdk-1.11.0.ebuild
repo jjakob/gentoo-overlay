@@ -62,7 +62,7 @@ RDEPEND="
 "
 BDEPEND="
 	test? (
-		<dev-python/voluptuous-0.14[$PYTHON_USEDEP]
+		<dev-python/voluptuous-0.15[$PYTHON_USEDEP]
 	)
 "
 
