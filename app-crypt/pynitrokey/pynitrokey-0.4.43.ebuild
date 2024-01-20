@@ -18,7 +18,9 @@ KEYWORDS="~amd64" # x86 missing in spsdk
 
 RDEPEND="
 	>=dev-python/certifi-14.5.15[${PYTHON_USEDEP}]
-	dev-python/cffi[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '
+		dev-python/cffi[${PYTHON_USEDEP}]
+	' 'python*')
 	=dev-python/click-8*[${PYTHON_USEDEP}]
 	>=dev-python/cryptography-41.0.4[${PYTHON_USEDEP}]
 	dev-python/ecdsa[${PYTHON_USEDEP}]
