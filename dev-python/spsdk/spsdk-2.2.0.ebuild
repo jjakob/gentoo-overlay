@@ -65,7 +65,7 @@ BDEPEND="
 	)
 "
 
-#PATCHES="${FILESDIR}/patches_2.1.1"
+PATCHES="${FILESDIR}/patches_2.2.0"
 
 distutils_enable_tests pytest
 
