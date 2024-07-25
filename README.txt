@@ -77,27 +77,26 @@ Packages:
 	  - cat >> /etc/portage/package.accept_keywords/pynitrokey <<-"EOF"
 		app-crypt/pynitrokey::jjakob
 		app-crypt/libnitrokey::jjakob
-		dev-python/libusb1::jjakob
 		dev-python/python-fire::guru
 		dev-python/nkdfu::jjakob
 		dev-python/spsdk::jjakob
-		dev-python/bincopy::jjakob
-		dev-python/humanfriendly::gentoo
-		dev-python/argparse-addons::jjakob
 		dev-python/hexdump::jjakob
 		dev-libs/libusbsio::jjakob
 		dev-python/pylink-square::jjakob
 		dev-python/sly-python::jjakob
 		dev-python/tlv8::jjakob
-		dev-python/click-option-group::guru
+		dev-python/click-option-group::gentoo
 		dev-python/click-command-tree::guru
 		dev-python/pyocd::jjakob
 		dev-python/cmsis-pack-manager::jjakob
 		dev-python/oscrypto::guru
 		dev-libs/hidapi::gentoo
+		dev-python/hidapi::gentoo
+		dev-python/click-aliases::gentoo
 
 		# for USE=doc, optional
 		dev-python/sphinx-click::guru
 		EOF
 	  - if you have masked overlays, unmask all the above packages
+	    (create package.unmask/pynitrokey with the same contents as above)
 	  - emerge -a app-crypt/pynitrokey
