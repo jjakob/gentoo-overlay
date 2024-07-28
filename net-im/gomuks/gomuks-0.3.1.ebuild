@@ -145,7 +145,7 @@ go-module_set_globals
 EGIT_COMMIT="v0.3.1"
 SRC_URI="https://github.com/tulir/gomuks/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz
 		${EGO_SUM_SRC_URI}"
-S=${WORKDIR}/${PN}-${EGIT_COMMIT}
+S=${WORKDIR}/${PN}-${EGIT_COMMIT#v}
 
 LICENSE="AGPL-3 Apache-2.0 BSD BSD-2 MIT MPL-2.0"
 SLOT="0"
