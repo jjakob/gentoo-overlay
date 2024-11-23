@@ -29,8 +29,8 @@ RDEPEND="
 	<dev-python/tlv8-1[${PYTHON_USEDEP}]
 	>=dev-python/pyserial-3.5[${PYTHON_USEDEP}]
 	<dev-python/pyserial-4[${PYTHON_USEDEP}]
-	>=dev-python/protobuf-python-5.26[${PYTHON_USEDEP}]
-	<dev-python/protobuf-python-6[${PYTHON_USEDEP}]
+	>=dev-python/protobuf-5.26[${PYTHON_USEDEP}]
+	<dev-python/protobuf-6[${PYTHON_USEDEP}]
 	>=dev-python/semver-3[${PYTHON_USEDEP}]
 "
 
