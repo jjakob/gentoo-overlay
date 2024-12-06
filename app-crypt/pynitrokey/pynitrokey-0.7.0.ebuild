@@ -45,3 +45,7 @@ RDEPEND="
 # tests require a connected nitrokey device and will destroy the data on it!
 # it would be bad if the user was not expecting this.
 RESTRICT="test"
+
+pkg_postinst(){
+	elog "To use the 'piv' subcommand, enable USE 'piv'"
+}
