@@ -77,22 +77,16 @@ Packages:
 	  - cat >> /etc/portage/package.accept_keywords/pynitrokey <<-"EOF"
 		app-crypt/pynitrokey::jjakob
 		app-crypt/libnitrokey::jjakob
+		app-crypt/nitrokey-udev-rules::jjakob
+		dev-python/nitrokey-sdk-py::jjakob
+		dev-python/nethsm::jjakob
+		dev-python/libusb1::guru
 		dev-python/python-fire::guru
 		dev-python/nkdfu::jjakob
-		dev-python/spsdk::jjakob
-		dev-python/hexdump::jjakob
-		dev-libs/libusbsio::jjakob
-		dev-python/pylink-square::jjakob
-		dev-python/sly-python::jjakob
 		dev-python/tlv8::jjakob
-		dev-python/click-option-group::gentoo
-		dev-python/click-command-tree::guru
-		dev-python/pyocd::jjakob
-		dev-python/cmsis-pack-manager::jjakob
-		dev-python/oscrypto::guru
 		dev-libs/hidapi::gentoo
 		dev-python/hidapi::gentoo
-		dev-python/click-aliases::gentoo
+		dev-python/click-aliases::guru
 
 		# for USE=doc, optional
 		dev-python/sphinx-click::guru
