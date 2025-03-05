@@ -5,7 +5,7 @@ EAPI=8
 
 # officially supports only py3.11
 DISTUTILS_USE_PEP517=flit
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{10..13} )
 inherit distutils-r1
 
 DESCRIPTION="Python DFU tool for updating Nitrokey firmware"
