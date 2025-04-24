@@ -40,7 +40,8 @@ src_configure() {
 
 src_install() {
 	emake INSTALL_ROOT="${D}" install
-	newicon "JMPX/myappico.ico" JMPX.ico
+	# .ico isn't supported, convert to png
+	#newicon "JMPX/myappico.ico" JMPX.ico
 	make_desktop_entry "JMPX" "JMPX" "JMPX" "AudioVideo;Audio;HamRadio" "StartupWMClass=JMPX"
 }
 
