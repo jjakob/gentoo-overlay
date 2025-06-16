@@ -48,6 +48,8 @@ Packages:
 	Version 9999 points to my fork https://github.com/jjakob/dma
 	branch "rewriteheaderfrom".
 	Other versions point to official releases.
+	** Note: I do not use it any more, I switched to Postfix with a config
+	that accomplishes the same behavior **
 
 	To install:
 	  - printf '%s' "virtual/mta::gentoo" > /etc/portage/package.mask/mta
