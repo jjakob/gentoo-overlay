@@ -78,7 +78,7 @@ Packages:
 		app-crypt/nitrokey-udev-rules::jjakob
 		dev-python/nitrokey-sdk-py::jjakob
 		dev-python/nethsm::jjakob
-		dev-python/libusb1::guru
+		dev-python/libusb1::gentoo
 		dev-python/python-fire::guru
 		dev-python/nkdfu::jjakob
 		dev-python/tlv8::jjakob
