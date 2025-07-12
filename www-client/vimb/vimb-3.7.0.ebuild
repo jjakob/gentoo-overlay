@@ -17,7 +17,7 @@ IUSE='savedconfig'
 
 RDEPEND='
 	x11-libs/gtk+:3
-	net-libs/webkit-gtk:4.1
+	<net-libs/webkit-gtk-2.47:4.1
 	net-libs/libsoup:3.0
 	virtual/libc
 	dev-libs/glib:2
