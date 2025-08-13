@@ -14,9 +14,11 @@ MY_COMMIT="b34a473ae3b63adb229760d216a7d8ae7a40cbe9"
 pv_git="v3.8-8-gb34a473"
 SRC_URI="https://github.com/Nitrokey/${PN}/archive/${MY_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
 S="${WORKDIR}/${PN}-${MY_COMMIT}"
-KEYWORDS="~amd64"
+
 LICENSE="LGPL-3+"
 SLOT="0"
+KEYWORDS="~amd64"
+
 IUSE="doc test udev"
 RESTRICT="!test? ( test )"
 
@@ -70,4 +72,3 @@ src_install() {
 	# udev rules are now installed by the nitrokey-udev-rules package
 	rm "${ED}/${udevrulesdir}/41-nitrokey.rules" || die
 }
-
