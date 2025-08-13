@@ -17,11 +17,11 @@ LICENSE="Apache-2.0"
 SLOT="0"
 
 if [[ ${PV} == 9999 ]]; then
-    inherit git-r3
-    EGIT_REPO_URI="https://github.com/Nitrokey/nitrokey-app2.git"
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/Nitrokey/nitrokey-app2.git"
 else
-    SRC_URI="https://github.com/Nitrokey/nitrokey-app2/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz"
-    KEYWORDS="~amd64"
+	SRC_URI="https://github.com/Nitrokey/nitrokey-app2/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz"
+	KEYWORDS="~amd64"
 fi
 
 RDEPEND="
