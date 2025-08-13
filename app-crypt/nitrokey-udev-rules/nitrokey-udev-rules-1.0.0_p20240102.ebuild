@@ -11,9 +11,10 @@ HOMEPAGE="https://github.com/Nitrokey/nitrokey-udev-rules"
 MY_COMMIT=5ffac5d0d9dc776f241a9553be5e92656585bd53
 SRC_URI="https://github.com/Nitrokey/${PN}/archive/${MY_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
 S="${WORKDIR}/${PN}-${MY_COMMIT}"
-KEYWORDS="~amd64"
+
 LICENSE="CC0-1.0"
 SLOT="0"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	virtual/udev
