@@ -19,7 +19,7 @@ IUSE="doc examples"
 RDEPEND="
 	>=dev-python/qrcode-5.3[$PYTHON_USEDEP]
 	>=dev-python/lxml-4.1[$PYTHON_USEDEP]
-	app-crypt/gpgme[python,$PYTHON_USEDEP]
+	=app-crypt/gpgme-1*[python,$PYTHON_USEDEP]
 "
 BDEPEND+=" doc? ( dev-python/sphinx )"
 
