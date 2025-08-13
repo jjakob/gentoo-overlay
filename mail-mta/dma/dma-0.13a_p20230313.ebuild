@@ -1,18 +1,20 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 DESCRIPTION="Dragonfly Mail Agent (jjakob fork with REWRITEFROM patch)"
 HOMEPAGE="https://github.com/jjakob/dma"
-LICENSE="BSD"
-SLOT="0"
-KEYWORDS="~amd64"
-IUSE="+mta"
 
 MY_COMMIT="7db329c93a7c17805231deca9fca9a52be245bf1"
 SRC_URI="https://github.com/jjakob/dma/archive/${MY_COMMIT}.tar.gz -> ${P}.gh.tar.gz"
 S="${WORKDIR}/${PN}-${MY_COMMIT}"
+
+LICENSE="BSD"
+SLOT="0"
+KEYWORDS="~amd64"
+
+IUSE="+mta"
 
 # build programs
 BDEPEND="
