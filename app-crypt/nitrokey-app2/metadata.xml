@@ -6,7 +6,7 @@
 		<name>APN-Pucky</name>
 	</maintainer>
 	<longdescription lang="en">
-    This application allows to manage Nitrokey 3 devices. To manage Nitrokey Pro and Nitrokey Storage devices, use the older Nitrokey App.
+		This application allows to manage Nitrokey 3 devices. To manage Nitrokey Pro and Nitrokey Storage devices, use the older Nitrokey App.
 	</longdescription>
 	<upstream>
 		<remote-id type="github">Nitrokey/nitrokey-app2</remote-id>
