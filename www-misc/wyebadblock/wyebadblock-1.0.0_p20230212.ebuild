@@ -5,6 +5,7 @@ EAPI=8
 
 DESCRIPTION="An adblock extension for wyeb, also webkit2gtk browsers."
 HOMEPAGE="https://github.com/jun7/wyebadblock"
+
 EGIT_COMMIT="529a5eedafacca9cd4ba78bf15d3a2bb565b821a"
 SRC_URI="https://github.com/jun7/wyebadblock/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/${PN}-${EGIT_COMMIT}"
@@ -19,7 +20,6 @@ DEPEND="
 	dev-libs/glib:2
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_compile(){
 	emake WEBKITVER="4.1" || die "emake failed"
