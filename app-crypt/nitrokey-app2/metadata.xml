@@ -2,6 +2,10 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
+		<email>jernej.jakob@gmail.com</email>
+		<name>Jernej Jakob</name>
+	</maintainer>
+	<maintainer type="person">
 		<email>APN-Pucky@users.noreply.github.com</email>
 		<name>APN-Pucky</name>
 	</maintainer>
@@ -12,4 +16,3 @@
 		<remote-id type="github">Nitrokey/nitrokey-app2</remote-id>
 	</upstream>
 </pkgmetadata>
-
