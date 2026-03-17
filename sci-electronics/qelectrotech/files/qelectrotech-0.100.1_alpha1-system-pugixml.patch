@@ -1,0 +1,57 @@
+--- a/CMakeLists.txt	2026-03-17 06:11:35.231231357 +0100
++++ b/CMakeLists.txt	2026-03-17 06:12:37.168556181 +0100
+@@ -121,7 +121,6 @@
+   ${QET_DIR}/sources/NameList
+   ${QET_DIR}/sources/NameList/ui
+   ${QET_DIR}/sources/utils
+-  ${QET_DIR}/pugixml/src
+   ${QET_DIR}/sources/dataBase
+   ${QET_DIR}/sources/dataBase/ui
+   ${QET_DIR}/sources/factory/ui
+--- a/cmake/qet_compilation_vars.cmake	2026-03-17 06:10:45.584037120 +0100
++++ b/cmake/qet_compilation_vars.cmake	2026-03-17 06:10:53.307452526 +0100
+@@ -421,10 +421,6 @@
+   ${QET_DIR}/sources/PropertiesEditor/propertieseditorwidget.cpp
+   ${QET_DIR}/sources/PropertiesEditor/propertieseditorwidget.h
+ 
+-  ${QET_DIR}/pugixml/src/pugiconfig.hpp
+-  ${QET_DIR}/pugixml/src/pugixml.cpp
+-  ${QET_DIR}/pugixml/src/pugixml.hpp
+-
+   ${QET_DIR}/sources/qetgraphicsitem/conductor.cpp
+   ${QET_DIR}/sources/qetgraphicsitem/conductor.h
+   ${QET_DIR}/sources/qetgraphicsitem/conductortextitem.cpp
+--- a/sources/diagramcontext.h	2026-03-17 06:15:51.370619798 +0100
++++ b/sources/diagramcontext.h	2026-03-17 06:16:18.290905857 +0100
+@@ -17,7 +17,7 @@
+ */
+ #ifndef DIAGRAM_CONTEXT_H
+ #define DIAGRAM_CONTEXT_H
+-#include "pugixml/src/pugixml.hpp"
++#include <pugixml.hpp>
+ 
+ #include <QDomElement>
+ #include <QHash>
+--- a/sources/ElementsCollection/elementslocation.h	2026-01-30 19:43:07.000000000 +0100
++++ b/sources/ElementsCollection/elementslocation.h	2026-03-17 06:17:39.095097787 +0100
+@@ -20,7 +20,7 @@
+ 
+ #include "../NameList/nameslist.h"
+ #include "../diagramcontext.h"
+-#include "pugixml/src/pugixml.hpp"
++#include <pugixml.hpp>
+ 
+ #include <QIcon>
+ #include <QString>
+--- a/sources/NameList/nameslist.h	2026-01-30 19:43:07.000000000 +0100
++++ b/sources/NameList/nameslist.h	2026-03-17 06:18:45.172466574 +0100
+@@ -17,7 +17,7 @@
+ */
+ #ifndef NAMES_LIST_H
+ #define NAMES_LIST_H
+-#include "pugixml/src/pugixml.hpp"
++#include <pugixml.hpp>
+ 
+ #include <QtXml>
+ /**
+

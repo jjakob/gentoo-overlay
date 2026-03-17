@@ -1,0 +1,11 @@
+--- a/CMakeLists.txt	2026-03-17 06:11:35.231231357 +0100
++++ b/CMakeLists.txt	2026-03-17 06:12:37.168556181 +0100
+@@ -142,7 +141,6 @@
+ install(DIRECTORY elements DESTINATION share/qelectrotech)
+ install(DIRECTORY examples DESTINATION share/qelectrotech)
+ install(DIRECTORY titleblocks DESTINATION share/qelectrotech)
+-install(FILES LICENSE ELEMENTS.LICENSE CREDIT README ChangeLog DESTINATION share/doc/qelectrotech)
+ install(FILES misc/org.qelectrotech.qelectrotech.desktop DESTINATION share/applications)
+ install(FILES misc/qelectrotech.xml DESTINATION share/mime/packages)
+ install(FILES misc/qelectrotech.appdata.xml DESTINATION ${QET_APPDATA_PATH})
+
