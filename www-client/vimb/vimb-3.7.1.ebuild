@@ -11,7 +11,7 @@ HOMEPAGE='http://fanglingsu.github.io/vimb/'
 SRC_URI="https://github.com/fanglingsu/vimb/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE='GPL-3'
-SLOT='3'
+SLOT='0'
 KEYWORDS='~amd64'
 IUSE='savedconfig'
 

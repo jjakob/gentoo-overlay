@@ -23,7 +23,6 @@ RDEPEND='
 	net-libs/libsoup:3.0
 	virtual/libc
 	dev-libs/glib:2
-	!www-client/vimb:3
 '
 DEPEND="
 	${RDEPEND}

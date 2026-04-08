@@ -13,7 +13,7 @@ SRC_URI="https://github.com/fanglingsu/vimb/archive/${MY_COMMIT}.tar.gz -> ${P}.
 S="${WORKDIR}/${PN}-${MY_COMMIT}"
 
 LICENSE='GPL-3'
-SLOT='3'
+SLOT='0'
 KEYWORDS='~amd64'
 IUSE='savedconfig'
 
