@@ -7,27 +7,33 @@ syncing. The mirrors that Gentoo creates do not have gpg signed commits.
 To use:
 - mask all packages in this overlay:
   echo printf '%s' "*/*::jjakob" > /etc/portage/package.mask/repo_jjakob
-- add my gpg public key to root's gpg trust store (This will download my key
-  and mark it as ultimately trusted in root's trust store. If you wish to contact
-  me to arrange key signing please do!):
-  - as user:
+- decide whether you want to use your user's or root's gpg trust store
+  (I recommend your user's as then portage will drop root privileges when syncing)
+- add my gpg public key to your user's gpg trust store (This will download my key
+  and mark it as ultimately trusted. If you wish to contact me to arrange
+  key signing please do!):
+  - (as user):
     - gpg --recv-keys 32238A107C6830B72F45042DEAF0634961C07989
-    - gpg --output jjakob.gpg --export 32238A107C6830B72F45042DEAF0634961C07989
-  - as root:
-    - gpg --import jjakob.gpg
-    - gpg --edit-key 32238A107C6830B72F45042DEAF0634961C07989 <<-"EOF"
+    - set key trust to ultimate:
+      gpg --edit-key 32238A107C6830B72F45042DEAF0634961C07989 <<-"EOF"
 	trust
 	5
 	q
 	EOF
-- cat > /etc/portage/repos.conf/jjakob <<- "EOF"
+  - cat > /etc/portage/repos.conf/jjakob <<- "EOF"
 	[jjakob]
 	location = /var/db/repos/jjakob
 	sync-type = git
 	sync-uri = https://github.com/jjakob/gentoo-overlay.git
-	# comment this if portage can't verify signatures
+	sync-user = <your user>
 	sync-git-verify-commit-signature = true
 	EOF
+- if you have decided to use root's gpg trust store:
+  - (as user) gpg --output jjakob.gpg --export 32238A107C6830B72F45042DEAF0634961C07989
+  - as root:
+    - gpg --import jjakob.gpg
+    - set key to ultimate trust as above
+  - create /etc/portage/repos.conf/jjakob as above but omit sync-user
 - unmask the packages you need, for example:
   printf '%s\n' "www-client/vimb::jjakob" >>
 	/etc/portage/package.unmask/repo_jjakob
