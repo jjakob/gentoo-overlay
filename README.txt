@@ -29,12 +29,19 @@ To use:
 	sync-git-verify-commit-signature = true
 	EOF
 - unmask the packages you need, for example:
-  printf '%s\n' "net-im/gomuks::jjakob" >>
+  printf '%s\n' "www-client/vimb::jjakob" >>
 	/etc/portage/package.unmask/repo_jjakob
 - sync and install packages as usual
 
 Packages:
+- net-analyzer/cnping
+- www-client/vimb
+- www-misc/wyebadblock
+
+Unmaintained (due to unuse or other reasons):
 - net-im/gomuks
+	!! gomuks has added a web (JS) backend and frontend, which I don't !!
+	!! intend on using or supporting, so I'm not maintaining it any more !!
 	To use, you must also enable the "guru" repository. I recommend using
 	the same method of masking and unmasking the overlay as above.
 	To install:
@@ -64,27 +71,27 @@ Packages:
 - virtual/mta
 	copy of virtual/mta::gentoo with added mail-mta/dma
 
-- net-analyzer/cnping
-- www-client/vimb
-- www-misc/wyebadblock
-
 - app-crypt/pynitrokey
+	!! All Nitrokey packages have been accepted into GURU !!
+	!! Enable the GURU overlay and install them from there !!
+	!! (the instructions below are for GURU) !!
 	https://github.com/Nitrokey/pynitrokey
 	To install:
 	  - enable overlay "guru" (mask it as described above)
 	  - cat >> /etc/portage/package.accept_keywords/pynitrokey <<-"EOF"
-		app-crypt/pynitrokey::jjakob
-		app-crypt/libnitrokey::jjakob
-		app-crypt/nitrokey-udev-rules::jjakob
-		dev-python/nitrokey-sdk-py::jjakob
-		dev-python/nethsm::jjakob
+		app-crypt/pynitrokey::guru
+		app-crypt/nitrokey-app2::guru
+		app-crypt/nitrokey-udev-rules::guru
+		dev-python/nitrokey::guru
+		dev-python/nethsm::guru
 		dev-python/libusb1::gentoo
 		dev-python/python-fire::guru
-		dev-python/nkdfu::jjakob
-		dev-python/tlv8::jjakob
+		dev-python/nkdfu::guru
+		dev-python/tlv8::guru
 		dev-libs/hidapi::gentoo
 		dev-python/hidapi::gentoo
 		dev-python/click-aliases::guru
+		dev-python/usb-monitor::guru
 
 		# for USE=doc, optional
 		dev-python/sphinx-click::guru
