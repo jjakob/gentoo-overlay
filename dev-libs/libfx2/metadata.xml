@@ -6,6 +6,6 @@
 		<name>Jernej Jakob</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">whitequark/libfx2</remote-id>
+		<remote-id type="codeberg">GlasgowEmbedded/libfx2</remote-id>
 	</upstream>
 </pkgmetadata>
