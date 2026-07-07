@@ -33,7 +33,7 @@ BDEPEND="
 
 src_prepare() {
 	default
-	restore_config config.def.h
+	restore_config src/config.h
 
 	sed -i -e "/^version = /c\\version = ${PVR}${MY_COMMIT:+"+git${MY_COMMIT:0:8}"}" Makefile
 }
@@ -44,5 +44,5 @@ src_compile() {
 
 src_install() {
 	emake PREFIX="/usr" DESTDIR="${D}" install
-	save_config src/config.def.h
+	save_config src/config.h
 }
