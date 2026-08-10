@@ -1,0 +1,30 @@
+# Copyright 1999-2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+PYTHON_COMPAT=( python3_{11..15} )
+PYTHON_REQ_USE="sqlite?"
+DISTUTILS_SINGLE_IMPL=1
+DISTUTILS_USE_PEP517=setuptools
+inherit distutils-r1
+
+DESCRIPTION="Tool for searching quassel logs from the commandline"
+HOMEPAGE="https://github.com/jjakob/quasselgrep"
+
+SRC_URI="https://github.com/jjakob/quasselgrep/archive/refs/tags/${PV}.tar.gz -> ${P}.gh.tar.gz"
+
+LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="~amd64"
+IUSE="+postgres +sqlite server"
+
+RDEPEND="
+	$(python_gen_cond_dep '
+		dev-python/python-dateutil[${PYTHON_USEDEP}]
+		server? ( dev-python/pycryptodome[${PYTHON_USEDEP}] )
+		postgres? ( dev-python/psycopg:0[${PYTHON_USEDEP}] )
+	')
+"
+
+RESTRICT="test"
