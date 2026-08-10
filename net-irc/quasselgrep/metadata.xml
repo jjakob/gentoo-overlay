@@ -8,4 +8,7 @@
 	<upstream>
 		<remote-id type="github">jjakob/quasselgrep</remote-id>
 	</upstream>
+	<use>
+		<flag name="server">Install the optional dependencies for client-server operation</flag>
+	</use>
 </pkgmetadata>
