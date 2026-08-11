@@ -1,0 +1,29 @@
+From 2cf51ff1913a5ec6b50449de16f78f227561e80c Mon Sep 17 00:00:00 2001
+From: Pieter Lenaerts <pieter.lenaerts@outlook.be>
+Date: Wed, 14 Jan 2026 20:42:04 +0100
+Subject: [PATCH] Fix lxml TypeError #5
+
+---
+ opgpcard/qrsvg.py | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/opgpcard/qrsvg.py b/opgpcard/qrsvg.py
+index 30671f9..44e2496 100644
+--- a/opgpcard/qrsvg.py
++++ b/opgpcard/qrsvg.py
+@@ -34,8 +34,10 @@ __all__ = ['gen_qr_svgimage', 'extract_qr_elem_path', 'obtain_qr_svg_width',
+ def gen_qr_svgimage(vcard, qr_path):
+     qr = QRCode(image_factory=SvgPathImage)
+     qr.add_data(vcard)
+-    # img = qr.make_image(image_factory=SvgPathImage)
+-    img = qr.make_image(fit=True)
++    # Use fit=True with make() to automatically determine best QR size,
++    # not with make_image() which would pass it to lxml and cause issues
++    qr.make(fit=True)
++    img = qr.make_image()
+     # NOTE: img.get_image() will return a lxml svg element,
+     # but without the qr path element.
+     # Probably there is other way to obtain it other than having to save
+-- 
+2.54.0
+
