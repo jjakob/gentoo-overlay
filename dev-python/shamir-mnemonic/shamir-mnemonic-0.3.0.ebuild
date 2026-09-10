@@ -24,6 +24,15 @@ RDEPEND="
 
 distutils_enable_tests pytest
 
-#python_test() {
-#	eunittest -s tests
-#}
+src_prepare() {
+    sed -i -e '/from bip32utils/d' test_shamir.py || die
+    distutils-r1_src_prepare
+}
+
+python_test() {
+    local EPYTEST_DESELECT=(
+		# requires bip32utils which has been deleted and is supposedly incompatible with openssl-3
+		'test_shamir.py::test_vectors'
+    )
+    epytest
+}
